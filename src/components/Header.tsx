@@ -6,7 +6,11 @@ export default function Header() {
           <li>
             <h2>Todo App.</h2>
           </li>
-          <li>Github</li>
+          <li>
+            <a href="https://github.com/mamsul/knitto-todo-app" target="_blank">
+              Github
+            </a>
+          </li>
         </ul>
       </nav>
     </header>

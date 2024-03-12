@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import MinusIcon from '../icons/MinusIcon';
 import PlusIcon from '../icons/PlusIcon';
 import TodoForm from './TodoForm';
 
@@ -12,7 +13,11 @@ export default function TodoHead() {
         <button
           className="flex items-center rounded bg-seco-dark p-3 text-prim-white hover:bg-prim-dark"
           onClick={() => setOpenForm(!openForm)}>
-          {!openForm && <PlusIcon className="me-3 h-4 w-4" />}
+          {!openForm ? (
+            <PlusIcon className="me-3 h-4 w-4" />
+          ) : (
+            <MinusIcon className="me-3 h-4 w-4" />
+          )}
           <span className="text-sm font-light">
             {!openForm ? 'Add Todo' : 'Hide form'}
           </span>
