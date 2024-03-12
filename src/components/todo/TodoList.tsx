@@ -29,6 +29,7 @@ export default function TodoList({ todos }: TodoListProps) {
         todosData?.map((todo) => (
           <TodoItem
             key={todo.id}
+            no={todo.id as number}
             title={todo.title}
             isCompleted={todo.completed}
           />

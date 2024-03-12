@@ -1,13 +1,16 @@
 interface TodoItemProps {
+  no: number;
   title: string;
   isCompleted: boolean;
 }
 
-export default function TodoItem({ title, isCompleted }: TodoItemProps) {
+export default function TodoItem({ no, title, isCompleted }: TodoItemProps) {
   return (
-    <div className="flex flex-row justify-between gap-5 px-2 py-4 hover:bg-seco-dark/5 md:gap-0">
+    <div className="flex flex-row justify-between px-2 py-4 hover:bg-seco-dark/5">
       <div className="flex w-9/12">
-        <span>{title}</span>
+        <p className="text-sm md:text-base">
+          <span className="me-2 text-seco-dark/70">{no}.</span> {title}
+        </p>
       </div>
       <div className="flex h-max w-2/12 justify-end">
         <span
