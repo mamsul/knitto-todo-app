@@ -4,7 +4,7 @@ export default function Header() {
       <nav className="mx-auto h-14 max-w-4xl bg-seco-dark backdrop-blur-sm md:rounded-full">
         <ul className="flex h-full items-center justify-between px-10 text-prim-white">
           <li>
-            <h2>Todo App.</h2>
+            <h2>Todo List.</h2>
           </li>
           <li>
             <a href="https://github.com/mamsul/knitto-todo-app" target="_blank">
