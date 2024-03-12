@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import StoreProvider from '@/redux/StoreProvider';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Toaster } from 'react-hot-toast';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-prim-white text-prim-dark`}>
         <Header />
         <StoreProvider>{children}</StoreProvider>
+        <Toaster position="top-center" reverseOrder={false} />
       </body>
     </html>
   );

@@ -2,7 +2,6 @@
 
 import { useAppSelector } from '@/redux/hooks';
 import { useGetTodosQuery } from '@/redux/service/todoApi';
-import { useEffect, useState } from 'react';
 import TodoItem from './TodoItem';
 
 // refetch after 10minutes
@@ -13,19 +12,12 @@ interface TodoListProps {
 }
 
 export default function TodoList({ todos }: TodoListProps) {
-  const [skipQuery, setSkipQuery] = useState<boolean>(true);
-  const { pageStart, pageLimit } = useAppSelector((state) => state.todos);
-  const { data, error } = useGetTodosQuery(
-    {
-      pageStart,
-      pageLimit,
-    },
-    { skip: skipQuery, pollingInterval: INTERVAL },
-  );
+  const { pageStart } = useAppSelector((state) => state.todos);
 
-  useEffect(() => {
-    setSkipQuery(false);
-  }, [pageStart]);
+  const { data, error } = useGetTodosQuery(pageStart, {
+    skip: false,
+    pollingInterval: INTERVAL,
+  });
 
   const todosData = data ?? todos;
 

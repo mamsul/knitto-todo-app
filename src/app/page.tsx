@@ -17,16 +17,16 @@ export default async function Home() {
   const todos: ITodo[] = await getTodos();
 
   return (
-    <main className="mx-auto min-h-screen max-w-4xl pb-10 pt-36">
-      <section className="border-b border-seco-dark/20 px-16 pb-5">
+    <main className="mx-auto min-h-screen max-w-4xl pb-10 pt-20 md:pt-36">
+      <section className="border-b border-seco-dark/20 px-5 pb-5 md:px-16">
         <TodoHead />
       </section>
 
-      <section className="px-16 py-10">
+      <section className="px-5 py-10 md:px-16">
         <TodoList todos={todos} />
       </section>
 
-      <section className="border-t border-seco-dark/20 px-16 pt-5">
+      <section className="border-t border-seco-dark/20 px-5 pt-5 md:px-16">
         <TodoPaginate />
       </section>
     </main>

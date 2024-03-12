@@ -4,7 +4,7 @@ interface ITodosState {
 }
 
 interface ITodo {
-  id: number;
+  id?: number;
   userId: number;
   title: string;
   completed: boolean;
