@@ -10,18 +10,12 @@ export const todosSlice = createSlice({
   initialState,
   reducers: {
     reset: () => initialState,
-    nextPage: (state) => {
-      state.pageStart += 10;
-    },
-    prevPage: (state) => {
-      state.pageStart -= 10;
-    },
     movePage: (state, action: PayloadAction<number>) => {
       state.pageStart = action.payload;
     },
   },
 });
 
-export const { reset, nextPage, prevPage, movePage } = todosSlice.actions;
+export const { reset, movePage } = todosSlice.actions;
 
 export default todosSlice.reducer;
