@@ -4,8 +4,9 @@ import { useAppSelector } from '@/redux/hooks';
 import { useGetTodosQuery } from '@/redux/service/todoApi';
 import TodoItem from './TodoItem';
 
-// refetch after 10minutes
 const INTERVAL = 600000;
+
+export const revalidate = 600;
 
 interface TodoListProps {
   todos: ITodo[];
